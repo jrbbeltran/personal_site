@@ -1390,62 +1390,41 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Jose R. Beltran · Rutgers University–Camden</div>
-      <div class="footer-links">
-        <a href="#top">Back to top ↑</a>
-        <a href="https://www.csii.app/" target="_blank" rel="noopener">CSII</a>
-      </div>
+<!-- Footer / Contact -->
+<footer id="contact" class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="mb-4">Get in touch</p>
+        
+        <!-- Hidden email with copy button -->
+        <div class="flex justify-center items-center gap-3 mb-8">
+            <button onclick="copyEmail()" 
+                    class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-full font-medium transition">
+                <i class="fas fa-envelope"></i>
+                <span id="email-display">Copy Email</span>
+            </button>
+        </div>
+
+        <div class="flex justify-center gap-6">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://scholar.google.com/citations?user=yourid" target="_blank" class="hover:text-indigo-400"><i class="fab fa-google-scholar fa-2x"></i></a>
+        </div>
+        
+        <p class="mt-10 text-sm opacity-75">© 2026 Javier R. Beltrán. All rights reserved.</p>
     </div>
-  </footer>
+</footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const revealElements = document.querySelectorAll(".reveal");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      revealElements.forEach((el) => el.classList.add("visible"));
-    } else {
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-      revealElements.forEach((el) => revealObserver.observe(el));
-    }
-
-    const sections = [...document.querySelectorAll("main section[id]")];
-    const navLinks = [...document.querySelectorAll(".nav-links a")];
-
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (!visible) return;
-
-        navLinks.forEach((link) => {
-          const isActive = link.getAttribute("href") === `#${visible.target.id}`;
-          link.classList.toggle("active", isActive);
-          if (isActive) link.setAttribute("aria-current", "page");
-          else link.removeAttribute("aria-current");
-        });
-      },
-      { rootMargin: "-25% 0px -60% 0px", threshold: [0.05, 0.2, 0.5] }
-    );
-
-    sections.forEach((section) => navObserver.observe(section));
-  </script>
+<script>
+// Email obfuscation + copy function
+function copyEmail() {
+    const email = 'your.email@rutgers.edu';  // ← Replace with your actual email
+    navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('email-display');
+        const originalText = btn.textContent;
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = originalText, 2000);
+    });
+}
+</script>
 </body>
 </html>
 
