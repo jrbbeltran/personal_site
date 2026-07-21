@@ -302,7 +302,7 @@
     .portrait-wrap {
       position: relative;
       width: 100%;
-      max-width: 430px;
+      max-width: 390px;
       justify-self: end;
     }
 
@@ -326,10 +326,12 @@
     }
 
     .portrait-card img {
+      display: block;
       width: 100%;
-      aspect-ratio: 4 / 3.7;
-      object-fit: cover;
-      object-position: 50% 22%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      object-position: center;
     }
 
     .portrait-caption {
@@ -924,7 +926,10 @@
       }
 
       .hero-grid {
-        gap: 52px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(400px, 0.65fr);
+        align-items: center;
+        gap: clamp(40px, 7vw, 88px);
       }
 
       .research-grid {
