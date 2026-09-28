@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jose R. Beltran is an Assistant Professor of Human Resources and Organizational Behavior at Rutgers University–Camden." />
+  <meta name="theme-color" content="#111827" />
+  <title>Jose R. Beltran | Organizational Behavior &amp; Management Scholar</title>
+
+  <!--
+    JR BELTRAN ACADEMIC WEBSITE
+    ---------------------------
+    This is a single-file page: the portrait, CSS, and JavaScript are embedded.
+
+    QUICK UPDATES:
+    1. Replace "Jose-R-Beltran-CV.pdf" with the newest CV file while keeping the same filename.
+    2. Citation metrics: update the research-impact summary when Google Scholar changes materially.
+    3. Selected publications and current projects: edit the relevant cards below.
+  -->
+
+  <style>
+    :root {
+      --ink: #151922;
+      --ink-2: #283140;
+      --muted: #647084;
+      --paper: #f7f5f1;
+      --paper-2: #eeebe5;
+      --white: #ffffff;
+      --line: rgba(21, 25, 34, 0.12);
+      --red: #cc0033;
+      --red-dark: #9d0027;
+      --navy: #111827;
+      --navy-2: #182235;
+      --gold: #d5a839;
+      --shadow: 0 22px 60px rgba(17, 24, 39, 0.12);
+      --shadow-soft: 0 12px 32px rgba(17, 24, 39, 0.08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(204, 0, 51, 0.08), transparent 28rem),
+        radial-gradient(circle at 90% 4%, rgba(17, 24, 39, 0.08), transparent 30rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -10rem;
+      z-index: 9999;
+      padding: .75rem 1rem;
+      border-radius: .6rem;
+      color: white;
+      background: var(--navy);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(21, 25, 34, 0.08);
+      background: rgba(247, 245, 241, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      color: white;
+      border-radius: 13px;
+      background: linear-gradient(145deg, var(--red), var(--red-dark));
+      box-shadow: 0 9px 22px rgba(204, 0, 51, 0.26);
+      font-size: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 720;
+      white-space: nowrap;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--red);
+      background: rgba(204, 0, 51, 0.07);
+    }
+
+    .hero {
+      padding: 78px 0 62px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(340px, .65fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 88px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .115em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.6rem, 8vw, 7.2rem);
+      line-height: .94;
+      letter-spacing: -0.066em;
+      font-weight: 700;
+    }
+
+    h1 .accent {
+      color: var(--red);
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      margin-bottom: 30px;
+      color: var(--ink-2);
+      font-size: clamp(1.12rem, 1.7vw, 1.38rem);
+      line-height: 1.55;
+    }
+
+    .hero-role {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-role span {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+      background: linear-gradient(145deg, var(--red), var(--red-dark));
+      box-shadow: 0 12px 28px rgba(204, 0, 51, .22);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, .68);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(204, 0, 51, .32);
+      background: white;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .button-dark {
+      color: white;
+      background: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .18);
+    }
+
+    .button-dark:hover {
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 430px;
+      justify-self: end;
+    }
+
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -22px 24px 24px -22px;
+      z-index: -1;
+      border-radius: 42px;
+      background:
+        linear-gradient(135deg, rgba(204, 0, 51, .95), rgba(204, 0, 51, .18) 58%, rgba(213, 168, 57, .68));
+      transform: rotate(-4deg);
+    }
+
+    .portrait-card {
+      overflow: hidden;
+      border: 8px solid white;
+      border-radius: 34px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .portrait-caption {
+      padding: 17px 20px 19px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      font-weight: 720;
+    }
+
+    .portrait-caption span {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .stats {
+      padding-bottom: 78px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat {
+      position: relative;
+      padding: 25px 28px 27px;
+    }
+
+    .stat:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      right: 0;
+      bottom: 22px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 3px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-muted {
+      border-block: 1px solid var(--line);
+      background: rgba(238, 235, 229, .55);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .115em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      line-height: 1.03;
+      letter-spacing: -.045em;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .research-card {
+      min-height: 260px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, .75);
+      box-shadow: 0 8px 24px rgba(17, 24, 39, .045);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(204, 0, 51, .24);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .research-index {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      aspect-ratio: 1;
+      margin-bottom: 28px;
+      border-radius: 14px;
+      color: white;
+      background: var(--navy);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .research-card:nth-child(2) .research-index,
+    .research-card:nth-child(3) .research-index {
+      background: var(--red);
+    }
+
+    .research-card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+      letter-spacing: -.025em;
+    }
+
+    .research-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .project-feature {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 50px;
+      padding: clamp(34px, 6vw, 68px);
+      border-radius: var(--radius-xl);
+      color: white;
+      background:
+        radial-gradient(circle at 95% 10%, rgba(204, 0, 51, .65), transparent 25rem),
+        radial-gradient(circle at 20% 110%, rgba(213, 168, 57, .25), transparent 24rem),
+        linear-gradient(145deg, var(--navy), var(--navy-2));
+      box-shadow: var(--shadow);
+    }
+
+    .project-feature::after {
+      content: "CSII";
+      position: absolute;
+      right: -18px;
+      bottom: -90px;
+      color: rgba(255, 255, 255, .035);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(9rem, 24vw, 20rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.08em;
+      pointer-events: none;
+    }
+
+    .project-feature > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-feature h2 {
+      max-width: 700px;
+      margin-bottom: 22px;
+      font-size: clamp(2.6rem, 6vw, 5.3rem);
+    }
+
+    .project-feature p {
+      max-width: 670px;
+      color: rgba(255, 255, 255, .74);
+      font-size: 18px;
+    }
+
+    .project-points {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .project-point {
+      padding: 17px 18px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(6px);
+      font-size: 14px;
+      font-weight: 720;
+    }
+
+    .project-point span {
+      display: block;
+      margin-bottom: 2px;
+      color: rgba(255, 255, 255, .52);
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pub-card {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: start;
+      padding: 24px 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, .78);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .pub-card:hover {
+      transform: translateX(4px);
+      border-color: rgba(204, 0, 51, .26);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pub-year {
+      color: var(--red);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .pub-card h3 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: -.015em;
+    }
+
+    .pub-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .pub-meta {
+      min-width: 92px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--ink-2);
+      background: var(--paper-2);
+      font-size: 11px;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .pub-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+    }
+
+    .teaching-panel,
+    .service-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, .78);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .teaching-panel {
+      padding: clamp(30px, 5vw, 54px);
+    }
+
+    .teaching-panel h3 {
+      max-width: 640px;
+      margin-bottom: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .teaching-panel p {
+      color: var(--muted);
+    }
+
+    .teaching-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: var(--ink-2);
+      background: var(--paper-2);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .teaching-metrics {
+      display: grid;
+      gap: 14px;
+    }
+
+    .metric-card {
+      flex: 1;
+      padding: 25px 26px;
+      border-radius: var(--radius-lg);
+      color: white;
+      background: var(--navy);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .metric-card:nth-child(2) {
+      color: var(--ink);
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .metric-card:nth-child(3) {
+      background: linear-gradient(145deg, var(--red), var(--red-dark));
+    }
+
+    .metric-card strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .metric-card span {
+      color: rgba(255, 255, 255, .66);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .metric-card:nth-child(2) span {
+      color: var(--muted);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .service-panel {
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 28px 30px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-head h3 {
+      margin-bottom: 5px;
+      font-size: 22px;
+    }
+
+    .panel-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      padding: 6px 30px 22px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 22px 0 22px 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 29px;
+      width: 9px;
+      aspect-ratio: 1;
+      border: 4px solid rgba(204, 0, 51, .16);
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+      padding: clamp(38px, 7vw, 78px);
+      border-radius: var(--radius-xl);
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(204, 0, 51, .96), rgba(157, 0, 39, .97)),
+        var(--red);
+      box-shadow: 0 24px 64px rgba(157, 0, 39, .25);
+    }
+
+    .contact-card h2 {
+      margin-bottom: 18px;
+    }
+
+    .contact-card p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 18px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 18px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .09);
+      font-size: 14px;
+      font-weight: 760;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateX(4px);
+      background: rgba(255, 255, 255, .15);
+    }
+
+    .site-footer {
+      padding: 34px 0 42px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-weight: 750;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(204, 0, 51, .38);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 960px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 0 10px;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-grid,
+      .section-heading,
+      .project-feature,
+      .teaching-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-wrap {
+        justify-self: start;
+        width: min(100%, 440px);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2)::after {
+        display: none;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .project-points {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 690px) {
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      h1 {
+        font-size: clamp(3.05rem, 16vw, 5rem);
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-points {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-card {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .pub-meta {
+        justify-self: start;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        padding: 21px 24px;
+      }
+
+      .stat:not(:last-child) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat::after {
+        display: none;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Jose R. Beltran home">
+        <span class="brand-mark">JRB</span>
+        <span class="brand-name">
+          Jose R. Beltran
+          <span>Management scholar</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Rutgers University–Camden</div>
+          <h1>Jose R.<br><span class="accent">Beltran, PhD</span></h1>
+          <p class="hero-role">
+            Assistant Professor
+            <span>of Human Resources &amp; Organizational Behavior</span>
+          </p>
+          <p class="hero-lead">
+            I study individual and organizational performance, leadership, personality and individual
+            differences, and the role of artificial intelligence and emerging technologies in organizations.
+            My work also develops computational, bibliometric, psychometric, and meta-analytic methods.
+          </p>
+
+          <div class="button-row">
+            <a class="button button-primary" href="#publications">Explore my research <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="https://scholar.google.com/citations?user=zVdF0JgAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="Jose-R-Beltran-CV.pdf" target="_blank" rel="noopener">Curriculum vitae <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <figure class="portrait-wrap reveal">
+          <div class="portrait-card">
+            <img
+              src="DIGG9258.jpg"
+              alt="Professional portrait of Jose R. Beltran"
+              width="1024"
+              height="1024"
+            />
+            <figcaption class="portrait-caption">
+              Rutgers School of Business–Camden
+              <span>Camden, NJ</span>
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Academic impact summary">
+      <div class="container stats-grid reveal">
+        <div class="stat">
+          <strong>2,075</strong>
+          <span>Google Scholar citations · Sept. 2026</span>
+        </div>
+        <div class="stat">
+          <strong>6</strong>
+          <span>h-index</span>
+        </div>
+        <div class="stat">
+          <strong>450+</strong>
+          <span>Students taught</span>
+        </div>
+        <div class="stat">
+          <strong>2023</strong>
+          <span>Joined Rutgers–Camden</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2>Research with context and consequence.</h2>
+          </div>
+          <p class="section-intro">
+            I am an Assistant Professor at Rutgers School of Business–Camden. My research examines
+            performance, leadership, personality and individual differences, artificial intelligence,
+            and the measurement of complex organizational phenomena. I earned my Ph.D. in Business
+            Administration–Management from Iowa State University.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card reveal">
+            <div class="research-index">01</div>
+            <h3>Performance &amp; leadership</h3>
+            <p>
+              Individual and organizational performance, strategic leadership, follower leadership
+              preferences, and the conditions that shape effective leadership.
+            </p>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-index">02</div>
+            <h3>AI &amp; emerging technologies</h3>
+            <p>
+              How artificial intelligence and emerging technologies fit organizations, shape work,
+              and help researchers operationalize complex constructs. Current work includes AI–Organization Fit.
+            </p>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-index">03</div>
+            <h3>Personality &amp; individual differences</h3>
+            <p>
+              Personality, leadership-relevant individual differences, and unobtrusive approaches
+              to measuring psychological constructs in organizational and upper-echelons settings.
+            </p>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-index">04</div>
+            <h3>Methods, measurement &amp; scholarly impact</h3>
+            <p>
+              Meta-analytic, bibliometric, psychometric, and computational methods, including tools
+              designed to assess scholarly impact in a more transparent and contextualized way.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <article class="project-feature reveal">
+          <div>
+            <div class="section-kicker" style="color:#f0bd48;">Featured project</div>
+            <h2>Tools for measuring scholarly impact</h2>
+            <p>
+              My work on scholarly impact includes the Contextualized Scholarly Impact Index (CSII)
+              and Scholarly Impact Above Replacement (SIAR). These projects move beyond raw citation
+              counts by emphasizing context, transparency, and more meaningful benchmarks of influence.
+            </p>
+            <div class="button-row">
+              <a class="button button-primary" href="https://www.csii.app/" target="_blank" rel="noopener">Launch CSII <span aria-hidden="true">↗</span></a>
+              <a class="button button-dark" href="https://hermanaguinis.com/pdf/AMPCSII.pdf" target="_blank" rel="noopener">Read the article <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <div class="project-points" aria-label="CSII features">
+            <div class="project-point">
+              <span>Context</span>
+              Benchmarks impact within management
+            </div>
+            <div class="project-point">
+              <span>Time</span>
+              Supports career-stage and period-based comparisons
+            </div>
+            <div class="project-point">
+              <span>Current tools</span>
+              CSII and Scholarly Impact Above Replacement (SIAR)
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="publications">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Selected publications</div>
+            <h2>Work across AI, performance, methods, and impact.</h2>
+          </div>
+          <p class="section-intro">
+            Selected peer-reviewed and invited publications spanning artificial intelligence,
+            performance theory, research methods, and the science of scholarly impact.
+          </p>
+        </div>
+
+        <div class="pub-list">
+          <a class="pub-card reveal" href="https://doi.org/10.1111/1748-8583.12524" target="_blank" rel="noopener">
+            <div class="pub-year">2023</div>
+            <div>
+              <h3>Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT</h3>
+              <p>Human Resource Management Journal, 33(3), 606–659 · Budhwar, Chowdhury, Wood, Aguinis, Bamber, Beltran, et al.</p>
+            </div>
+            <div class="pub-meta">Top-cited · Wiley</div>
+          </a>
+
+          <a class="pub-card reveal" href="https://doi.org/10.1016/j.orgdyn.2024.101029" target="_blank" rel="noopener">
+            <div class="pub-year">2024</div>
+            <div>
+              <h3>How to use generative AI as a human resource management assistant</h3>
+              <p>Organizational Dynamics, 53(1), 101029 · Aguinis, Beltran, &amp; Cope</p>
+            </div>
+            <div class="pub-meta">Peer-reviewed</div>
+          </a>
+
+          <a class="pub-card reveal" href="https://scholar.google.com/scholar?q=%22Theories+of+performance%3A+A+review+and+integration%22" target="_blank" rel="noopener">
+            <div class="pub-year">2024</div>
+            <div>
+              <h3>Theories of performance: A review and integration</h3>
+              <p>Academy of Management Annals, 18(2), 600–625 · Marshall, Aguinis, &amp; Beltran</p>
+            </div>
+            <div class="pub-meta">#1 most read · 2024</div>
+          </a>
+
+          <a class="pub-card reveal" href="https://doi.org/10.1002/job.2658" target="_blank" rel="noopener">
+            <div class="pub-year">2023</div>
+            <div>
+              <h3>Thought experiments: Review and recommendations</h3>
+              <p>Journal of Organizational Behavior, 44(3), 544–560 · Aguinis, Beltran, Archibold, Jean, &amp; Rice</p>
+            </div>
+            <div class="pub-meta">Top downloaded</div>
+          </a>
+
+          <a class="pub-card reveal" href="https://scholar.google.com/scholar?q=%22Performance%3A+Confirming%2C+refining%2C+and+refuting+theories%22" target="_blank" rel="noopener">
+            <div class="pub-year">2024</div>
+            <div>
+              <h3>Performance: Confirming, refining, and refuting theories</h3>
+              <p>Journal of Management Scientific Reports, 2(2), 135–153 · Aguinis, Beltran, &amp; Marshall</p>
+            </div>
+            <div class="pub-meta">Peer-reviewed</div>
+          </a>
+
+          <a class="pub-card reveal" href="https://doi.org/10.5465/amp.2023.0198" target="_blank" rel="noopener">
+            <div class="pub-year">2024</div>
+            <div>
+              <h3>Putting scholarly impact in context: Implications for policymaking and practice</h3>
+              <p>Academy of Management Perspectives, 38(3), 368–391 · Beltran, Aguinis, Shuumarjav, &amp; Mercado</p>
+            </div>
+            <div class="pub-meta">#8 most read · 2024</div>
+          </a>
+        </div>
+
+        <div class="pub-footer">
+          <a class="button button-secondary" href="https://scholar.google.com/citations?user=zVdF0JgAAAAJ&hl=en" target="_blank" rel="noopener">View all publications on Google Scholar <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Teaching</div>
+            <h2>Organizational behavior that students can use.</h2>
+          </div>
+          <p class="section-intro">
+            My teaching connects organizational behavior theory to real workplace decisions,
+            leadership challenges, careers, and emerging technologies. I emphasize reflection,
+            active discussion, practitioner engagement, and evidence-based application.
+          </p>
+        </div>
+
+        <div class="teaching-grid">
+          <article class="teaching-panel reveal">
+            <div class="section-kicker">Primary course</div>
+            <h3>Introduction to Organizational Behavior</h3>
+            <p>
+              Undergraduate instruction at Rutgers School of Business–Camden and Iowa State University,
+              including Introduction to Organizational Behavior and Honors Organizational Behavior in
+              in-person, online, and hybrid formats. Topics include motivation, leadership, teams,
+              stress, personality, decision-making, culture, ethics, and performance.
+            </p>
+            <div class="teaching-tags" aria-label="Teaching topics">
+              <span class="tag">Leadership</span>
+              <span class="tag">Motivation</span>
+              <span class="tag">Teams</span>
+              <span class="tag">Decision-making</span>
+              <span class="tag">Culture</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Generative AI</span>
+            </div>
+          </article>
+
+          <div class="teaching-metrics">
+            <article class="metric-card reveal">
+              <strong>4.67/5</strong>
+              <span>Honors Organizational Behavior · Fall 2025</span>
+            </article>
+            <article class="metric-card reveal">
+              <strong>450+</strong>
+              <span>Students taught across Rutgers and Iowa State</span>
+            </article>
+            <article class="metric-card reveal">
+              <strong>R + Python</strong>
+              <span>Computational methods, data analysis, and technical workshops</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="service">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Mentoring, service &amp; recognition</div>
+            <h2>Building pathways into the academy.</h2>
+          </div>
+          <p class="section-intro">
+            My service centers on mentoring PhD students and emerging scholars. 
+            I am deeply committed to developing the next generation of management 
+            researchers through hands-on guidance on research projects and professional 
+            development. I also contribute to the field through leadership roles and 
+            service to top journals.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-panel reveal">
+            <div class="panel-head">
+              <h3>Academic &amp; professional service</h3>
+              <p>Selected current roles and activities</p>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>LaFamilia Management Scholars</h4>
+                <p>Board of Directors; Communications Chair; Webmaster. Supporting a national network of management faculty and emerging scholars.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Rutgers School of Business–Camden AI Task Force</h4>
+                <p>Member · 2025</p>
+              </div>
+              <div class="timeline-item">
+                <h4>The PhD Project</h4>
+                <p>Annual conference speaker; research collaboration participant; doctoral student practice-job-talk mentor.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Academy of Management</h4>
+                <p>Conference reviewer since 2019; member since 2018.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-panel reveal">
+            <div class="panel-head">
+              <h3>Awards &amp; recent highlights</h3>
+              <p>Selected recognition</p>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>Best Reviewer Award</h4>
+                <p>Organizational Behavior Division, Academy of Management · 2026</p>
+              </div>
+              <div class="timeline-item">
+                <h4>#1 Most Read Article</h4>
+                <p><em>Academy of Management Annals</em> · 2024 publications, reported September 2025</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Top Downloaded Article</h4>
+                <p><em>Journal of Organizational Behavior</em> · Wiley · March 2024</p>
+              </div>
+              <div class="timeline-item">
+                <h4>AOM 2026 Professional Development Workshops</h4>
+                <p>CSII and scholarly impact; vignette studies and thought experiments · Philadelphia, PA</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="section-kicker" style="color:#ffd4df;">Contact</div>
+            <h2>Let’s connect.</h2>
+            <p>
+              I welcome conversations about research collaboration, scholarly impact,
+              organizational behavior, methods workshops, mentoring, and speaking opportunities.
+            </p>
+          </div>
+
+          <div class="contact-details">
+            <a class="contact-link" id="email-link" href="#" aria-label="Email Jose R. Beltran">
+              <span id="email-text">Email me</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="contact-link" href="https://business.camden.rutgers.edu/faculty-profiles/dr-jose-beltran/" target="_blank" rel="noopener">
+              <span>Rutgers faculty profile</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/jose-r-beltran-807997246" target="_blank" rel="noopener">
+              <span>LinkedIn</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-link" href="https://scholar.google.com/citations?user=zVdF0JgAAAAJ&hl=en" target="_blank" rel="noopener">
+              <span>Google Scholar</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Jose R. Beltran · Rutgers University–Camden</div>
+      <div class="footer-links">
+        <a href="#top">Back to top ↑</a>
+        <a href="https://www.csii.app/" target="_blank" rel="noopener">CSII</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Assemble the email address after page load so it is not stored as one
+    // plain-text string in the HTML source.
+    const emailUser = ["jr", "bel"].join(".");
+    const emailDomain = ["rutgers", "edu"].join(".");
+    const emailAddress = `${emailUser}@${emailDomain}`;
+    const emailLink = document.getElementById("email-link");
+    const emailText = document.getElementById("email-text");
+
+    if (emailLink && emailText) {
+      emailLink.href = `mailto:${emailAddress}`;
+      emailText.textContent = "Email me";
+    }
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealElements.forEach((el) => el.classList.add("visible"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealElements.forEach((el) => revealObserver.observe(el));
+    }
+
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navLinks = [...document.querySelectorAll(".nav-links a")];
+
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visible) return;
+
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${visible.target.id}`;
+          link.classList.toggle("active", isActive);
+          if (isActive) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        });
+      },
+      { rootMargin: "-25% 0px -60% 0px", threshold: [0.05, 0.2, 0.5] }
+    );
+
+    sections.forEach((section) => navObserver.observe(section));
+  </script>
+</body>
+</html>
